@@ -69,6 +69,46 @@ public class TestPerson {
     }
 
     @Test
+    public void testConstructorWithNameHeightEyeColor() {
+        // Given
+        String expectedName = "Leon";
+        Double expectedHeight = 5.6;
+        String expectedEyecolor = "Brown";
+
+        // When
+        Person person = new Person(expectedName, expectedHeight, expectedEyecolor);
+
+        // Then
+        String  acctualName = person.getName();
+        Double actualHeight = person.getHeight();
+        String actualEyeColor = person.getEyeColor();
+
+        Assert.assertEquals(expectedName, acctualName);
+        Assert.assertEquals(expectedHeight, actualHeight);
+        Assert.assertEquals(expectedEyecolor, actualEyeColor);
+    }
+
+    @Test
+    public void testConstructorWithGenderSsnHobby() {
+        // Given
+        Character expectedGender = 'M';
+        Integer expectedSSN = 0000;
+        String expectedHobby = "Games";
+
+        // When
+        Person person = new Person(expectedGender, expectedSSN, expectedHobby);
+
+        // Then
+        Character actualGender = person.getGender();
+        Integer actualSSN = person.getLast4ssn();
+        String actualHobby = person.getHobby();
+
+        Assert.assertEquals(expectedGender, actualGender);
+        Assert.assertEquals(expectedSSN, actualSSN);
+        Assert.assertEquals(expectedHobby, actualHobby);
+    }
+
+    @Test
     public void testSetName() {
         // Given
         Person person = new Person();
@@ -93,6 +133,76 @@ public class TestPerson {
 
         // Then
         Integer actual = person.getAge();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHeight() {
+        // Given
+        Person person = new Person();
+        Double expected = 5.5;
+
+        // When
+        person.setHeight(expected);
+
+        // Then
+        Double actual = person.getHeight();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetEyeColor() {
+        // Given
+        Person person = new Person();
+        String expected = "Brown";
+
+        // When
+        person.setEyeColor(expected);
+
+        // Then
+        String actual = person.getEyeColor();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetGender() {
+        // Given
+        Person person = new Person();
+        Character expected = 'M';
+
+        // When
+        person.setGender(expected);
+
+        // Then
+        Character actual = person.getGender();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetLast4Ssn() {
+        // Given
+        Person person = new Person();
+        Integer expected = 9999;
+
+        // When
+        person.setLast4ssn(expected);
+
+        // Then
+        Integer actual = person.getLast4ssn();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetHobby() {
+        // Given
+        Person person = new Person();
+        String expected = "Games";
+
+        // When
+        person.setHobby(expected);
+
+        // Then
+        String actual = person.getHobby();
         Assert.assertEquals(expected, actual);
     }
 }
